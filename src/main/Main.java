@@ -11,11 +11,11 @@ public class Main {
 		System.out.println("---- Auto Mouse Clicker ----");
 		
 		System.out.println("Enter the number of desired clicks: ");
-		int clicks = scanner.nextInt();
+		int clicks = scr.nextInt();
 		System.out.println();
 		
 		System.out.println("Enter delay between clicks in miliseconds: ");
-		int delay = scanner.nextInt();
+		int delay = scr.nextInt();
 		System.out.println();
 		System.out.println("Program will start in 3 seconds!");
 		
