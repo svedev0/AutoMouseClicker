@@ -8,7 +8,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("---- Super Auto Clicker ----");
+		System.out.println("---- Auto Mouse Clicker ----");
 		
 		System.out.println("Enter the number of desired clicks: ");
 		int clicks = scanner.nextInt();
