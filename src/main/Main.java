@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Main {
 	
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
+		Scanner scr = new Scanner(System.in);
 		System.out.println("---- Auto Mouse Clicker ----");
 		
 		System.out.println("Enter the number of desired clicks: ");
