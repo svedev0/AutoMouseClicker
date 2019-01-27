@@ -12,13 +12,13 @@ public class Main {
 		System.out.println("---- Auto Mouse Clicker ----");
 		
 		System.out.println("Number of clicks: (0 = infinate)");
-		int clicks = scr.nextInt();
-		System.out.println();
-		
-		System.out.println("Enter delay between clicks in miliseconds: ");
 		
 		if (scr.nextInt() == 0) {
-			int delay = 1000000 * 1000000;
+			int clicks = 1000000 * 1000000;
+			
+			System.out.println();
+			System.out.println("Enter delay between clicks in miliseconds: ");
+			int delay = scr.nextInt();
 			
 			System.out.println();
 			System.out.println("Program will start in 3 seconds!");
@@ -45,6 +45,10 @@ public class Main {
 			System.exit(0);
 			
 		} else {
+			int clicks = scr.nextInt();
+			
+			System.out.println();
+			System.out.println("Enter delay between clicks in miliseconds: ");
 			int delay = scr.nextInt();
 			
 			System.out.println();
