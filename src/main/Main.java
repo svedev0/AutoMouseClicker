@@ -11,6 +11,7 @@ public class Main {
 		Scanner scr = new Scanner(System.in);
 		System.out.println("---- Auto Mouse Clicker ----");
 		
+		System.out.println();
 		System.out.println("Number of clicks: (0 = infinate)");
 		
 		if (scr.nextInt() == 0) {
@@ -21,7 +22,7 @@ public class Main {
 			int delay = scr.nextInt();
 			
 			System.out.println();
-			System.out.println("Program will start in 3 seconds!");
+			System.out.println("Clicking will start in 3 seconds!");
 			
 			try {
 				Thread.sleep(3000);
@@ -35,15 +36,6 @@ public class Main {
 			for (int i = 0; i < clicks; i++) {
 				clicker.clickMouse(InputEvent.BUTTON1_MASK);
 			}
-			
-			System.out.println("Clicking complete!");
-			try {
-				Thread.sleep(5000);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			System.exit(0);
-			
 		} else {
 			int clicks = scr.nextInt();
 			
@@ -52,7 +44,7 @@ public class Main {
 			int delay = scr.nextInt();
 			
 			System.out.println();
-			System.out.println("Program will start in 3 seconds!");
+			System.out.println("Clicking will start in 3 seconds!");
 			
 			try {
 				Thread.sleep(3000);
@@ -66,15 +58,15 @@ public class Main {
 			for (int i = 0; i < clicks; i++) {
 				clicker.clickMouse(InputEvent.BUTTON1_MASK);
 			}
-			
-			System.out.println("Clicking complete!");
-			try {
-				Thread.sleep(5000);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			System.exit(0);
 		}
+		
+		System.out.println("Clicking complete!");
+		try {
+			Thread.sleep(5000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.exit(0);
 	}
 }
 
