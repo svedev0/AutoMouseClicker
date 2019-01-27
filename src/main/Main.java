@@ -12,52 +12,28 @@ public class Main {
 		System.out.println("---- Auto Mouse Clicker ----");
 		
 		System.out.println();
-		System.out.println("Number of clicks: (0 = infinate)");
+		System.out.println("Number of clicks: ");
 		
-		if (scr.nextInt() == 0) {
-			int clicks = 1000000 * 1000000;
+		int clicks = scr.nextInt();
 			
-			System.out.println();
-			System.out.println("Enter delay between clicks in miliseconds: ");
-			int delay = scr.nextInt();
+		System.out.println();
+		System.out.println("Enter delay between clicks in miliseconds: ");
+		int delay = scr.nextInt();
 			
-			System.out.println();
-			System.out.println("Clicking will start in 3 seconds!");
+		System.out.println();
+		System.out.println("Clicking will start in 3 seconds!");
 			
-			try {
-				Thread.sleep(3000);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+		try {
+			Thread.sleep(3000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 			
-			Clicker clicker = new Clicker();
-			clicker.setDelay(delay);
+		Clicker clicker = new Clicker();
+		clicker.setDelay(delay);
 			
-			for (int i = 0; i < clicks; i++) {
-				clicker.clickMouse(InputEvent.BUTTON1_MASK);
-			}
-		} else {
-			int clicks = scr.nextInt();
-			
-			System.out.println();
-			System.out.println("Enter delay between clicks in miliseconds: ");
-			int delay = scr.nextInt();
-			
-			System.out.println();
-			System.out.println("Clicking will start in 3 seconds!");
-			
-			try {
-				Thread.sleep(3000);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			
-			Clicker clicker = new Clicker();
-			clicker.setDelay(delay);
-			
-			for (int i = 0; i < clicks; i++) {
-				clicker.clickMouse(InputEvent.BUTTON1_MASK);
-			}
+		for (int i = 0; i < clicks; i++) {
+			clicker.clickMouse(InputEvent.BUTTON1_MASK);
 		}
 		
 		System.out.println("Clicking complete!");
