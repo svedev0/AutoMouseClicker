@@ -113,6 +113,7 @@ public class Main extends Application {
 		
 		Scene mainScene = new Scene(root, windowWidth, windowHeight);
         
+        window.getIcons().add(new Image("/icons/mouse.png"));
 		window.setTitle("Auto Mouse Clicker");
 		window.setResizable(false);
         window.setScene(mainScene);
