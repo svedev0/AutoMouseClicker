@@ -19,7 +19,7 @@ public class Clicker {
 	public void clickMouse(int button) {
 		try {	
 			robot.mousePress(button);
-			robot.delay(100);
+			robot.delay(10);
 			robot.mouseRelease(button);
 			robot.delay(delay);
 		} catch (Exception e) {
