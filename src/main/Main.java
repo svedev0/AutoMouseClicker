@@ -41,10 +41,6 @@ public class Main extends Application {
 		TextField delayText = new TextField();
 
 		Button startButton = new Button();
-		
-		// Content for clicking scene
-		
-		Label timer = new Label("Clicking will start in 3 seconds!");
 
 		// Styling ==========================================================
 
@@ -88,6 +84,12 @@ public class Main extends Application {
 			
 			root.getChildren().removeAll(clicksLabel, clicksText, delayLabel, delayText, startButton);
 			
+			Label timer = new Label("Clicking will start in 3 seconds!");
+			
+			root.getChildren().addAll(timer);
+			
+			root.getChildren().removeAll(clicksLabel, clicksText, delayLabel, delayText, startButton);
+			
 			Label done = new Label("Clicking has finished!");
 			Label clicksDone = new Label("Clicked: " + clicks + " times!");
 
@@ -96,6 +98,8 @@ public class Main extends Application {
 			} catch (Exception ex) {
 				ex.printStackTrace();
 			}
+			
+			root.getChildren().removeAll(timer);
 			
 			for (int i = 0; i < clicks; i++) {
 				clicker.clickMouse(InputEvent.BUTTON1_MASK);
