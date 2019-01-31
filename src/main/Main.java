@@ -1,45 +1,74 @@
 package main;
 
 import java.awt.event.InputEvent;
-import java.lang.Thread;
-import java.util.Scanner;
 
-public class Main {
-	
-	private static Scanner scr;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+public class Main extends Application {
 
 	public static void main(String[] args) {
-		scr = new Scanner(System.in);
-		System.out.println("---- Auto Mouse Clicker ----");
+		launch();
+	}
 
-		System.out.println("Enter the number of desired clicks: ");
-		int clicks = scr.nextInt();
-		System.out.println();
+	int windowWidth = 600;
+	int windowHeight = 800;
 
-		System.out.println("Enter delay between clicks in miliseconds: ");
-		int delay = scr.nextInt();
-		System.out.println();
-		System.out.println("Program will start in 3 seconds!");
+	@SuppressWarnings("all")
+	public void start(Stage window) throws Exception {
 
-		try {
-			Thread.sleep(3000);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
+		// Create containers ================================================
+
+		VBox root = new VBox();
+
+		// Create scenes ====================================================
+
+		Scene mainScene = new Scene(root, windowWidth, windowHeight);
+
+		// Create content for scenes =======================================
+
+		Label clicksLabel = new Label("Enter number of clicks:");
+		TextField clicksText = new TextField();
+
+		Label delayLabel = new Label("Enter delay between clicks:");
+		TextField delayText = new TextField();
+
+		Button startButton = new Button();
+
+		// Styling ==========================================================
+
+		startButton.setText("Start");
+
+		// Button action ====================================================
+
 		Clicker clicker = new Clicker();
-		clicker.setDelay(delay);
-		
-		for (int i = 0; i < clicks; i++) {
-			clicker.clickMouse(InputEvent.BUTTON1_MASK);
-		}
-		
-		System.out.println("Clicking complete!");
-		try {
-			Thread.sleep(5000);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		System.exit(0);
+
+		startButton.setOnMouseClicked(e -> {
+
+			int clicks = Integer.parseInt(clicksText.getText());
+			int delay = Integer.parseInt(delayText.getText());
+
+			root.getChildren().removeAll();
+
+			for (int i = 0; i < clicks; i++) {
+				Clicker.delay = Integer.parseInt(delayText.getText());
+				clicker.clickMouse(InputEvent.BUTTON1_MASK);
+			}
+		});
+
+		root.getChildren().addAll(clicksLabel, clicksText, delayLabel, delayText, startButton);
+
+		// Window parameters ===============================================
+
+		window.getIcons().add(new Image("/icons/icon.png"));
+		window.setTitle("Auto Mouse Clicker");
+		window.setScene(mainScene);
+		window.show();
 	}
 }

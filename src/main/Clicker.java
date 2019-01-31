@@ -5,7 +5,7 @@ import java.awt.Robot;
 public class Clicker {
 	
 	private Robot robot;
-	private int delay;
+	static int delay;
 	
 	public Clicker() {
 		try {
@@ -28,6 +28,6 @@ public class Clicker {
 	}
 	
 	public void setDelay(int ms) {
-		this.delay = ms;
+		Clicker.delay = ms;
 	}
 }
