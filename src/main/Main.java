@@ -6,9 +6,10 @@ import java.util.Scanner;
 
 public class Main {
 	
-	@SuppressWarnings("resource")
+	private static Scanner scr;
+
 	public static void main(String[] args) {
-		Scanner scr = new Scanner(System.in);
+		scr = new Scanner(System.in);
 		System.out.println("---- Auto Mouse Clicker ----");
 
 		System.out.println("Enter the number of desired clicks: ");
