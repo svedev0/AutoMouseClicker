@@ -5,6 +5,8 @@ import java.awt.event.InputEvent;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -83,6 +85,13 @@ public class Main extends Application {
 			Clicker.delay = Integer.parseInt(delayText.getText());
 			
 			root.getChildren().removeAll(clicksLabel, clicksText, delayLabel, delayText, startButton);
+			
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.setTitle("");
+			alert.setHeaderText(null);
+			alert.setContentText("Clicking will start in 3 seconds");
+
+			alert.showAndWait();
 			
 			Label timer = new Label("Clicking will start in 3 seconds!");
 			
