@@ -88,19 +88,18 @@ public class Main extends Application {
 			
 			root.getChildren().addAll(timer);
 			
-			root.getChildren().removeAll(clicksLabel, clicksText, delayLabel, delayText, startButton);
-			
-			Label done = new Label("Clicking has finished!");
-			Label clicksDone = new Label("Clicked: " + clicks + " times!");
-
 			try {
 				Thread.sleep(3000);
 			} catch (Exception ex) {
 				ex.printStackTrace();
 			}
-			
+
 			root.getChildren().removeAll(timer);
+			root.getChildren().removeAll(clicksLabel, clicksText, delayLabel, delayText, startButton);
 			
+			Label done = new Label("Clicking has finished!");
+			Label clicksDone = new Label("Clicked: " + clicks + " times!");
+
 			for (int i = 0; i < clicks; i++) {
 				clicker.clickMouse(InputEvent.BUTTON1_MASK);
 			}
